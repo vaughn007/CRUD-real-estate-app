@@ -1,0 +1,37 @@
+<% include ./partials/header %>  <!-- <./partials because we are not in diffent folder  -->
+
+
+<!-- <h1>Sign up</h1>
+
+<form action="/register" method="POST">
+    <input type="text" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
+    <button>Submit</button>
+</form> -->
+
+<div class="row">
+	
+<div class="col-md-12 text-center">
+	
+<div style="width: 30%; margin: 25px auto;">
+	
+		<form action="/register" method="POST">
+      
+      <h3 class="h3 mb-3 font-weight-normal">Sign Up</h3>
+      <label for="inputUsername" class="sr-only">Username</label>
+      <input type="text" id="inputUsername" class="form-control" name="username" placeholder="Username" required autofocus> <br>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" name="password" 
+			 placeholder="Password" required> <br>
+      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+      
+    </form>
+	<!-- <a href="/homes">Go Back</a> -->
+</div>
+	
+</div>
+	
+</div>
+
+<% include ./partials/footer %> 

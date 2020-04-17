@@ -1,0 +1,79 @@
+body {
+  background-color: #000;
+}
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+#landing-header h1 {
+  color: #fff;
+}
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://media.architecturaldigest.in/wp-content/uploads/2018/08/170320-lania-lane-palazzo-di-amore-beverly-hills-2.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://magazinna.com/wp-content/uploads/2018/08/most-expensive-houses.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://www.washingtonpost.com/resizer/PI2dxiCE-kHV0TvxLCVhtdenObI=/arc-anglerfish-washpost-prod-washpost/public/3MQK54FD2RCMNBUGPFJB6KEMZE.jpg);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://static.mansionglobal.com/production/media/article-images/458991ad18ba4a4ae20bbf789cc0e22f/large_20170607_KeanDevelopment_OldTown_Lot6_742.jpg);
+  animation-delay: 30s; 
+}
+
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}

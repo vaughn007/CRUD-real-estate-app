@@ -1,0 +1,136 @@
+<% include ../partials/header %> <!--file is nested inside homes foldedr go back 1 folder. it like cd ..-->
+
+
+
+
+<div class="container-fluid">
+	<div class="filter-search">
+      <div class="container">
+          <form action="/homes" method="GET" class="filter-form">
+
+    <select name="search" id="form-city">
+		<option value="" disabled selected>Search by location</option>
+      <option value="New York">New York</option>
+  <option value="CA">California</option>
+  <option value="MI">Michigan</option>
+  <option value="Hawaii">Hawaii</option>
+</select>
+			  
+			  
+
+              <input type="submit" value="SEARCH" class="site-btn fs-submit">
+          </form>
+      </div>
+  </div>
+	
+
+	
+	<div class="section-title text-center">
+<h3>Featured Listings</h3>
+</div>
+
+		
+            	<div>
+         <div class="col-md-12">
+             <% if(noMatch !== null) { %>
+             <h3><%= noMatch %></h3>
+            
+             <% } %>
+         </div>
+            
+	
+
+
+
+	<div class="row text-center">
+   
+        <% homes.forEach(function(homes) { %>
+   
+		<div class="col-lg-4 col-md-6">
+       
+			<div class="feature-item">
+				<a href="/homes/<%=homes._id %>">
+  <img src="<%= homes.image %>" alt="<%= homes.name %>">
+				</a>
+  
+		<div class="feature-text">
+			<div class="text-center feature-title">
+	  <h5><%= homes.address %></h5>
+	<p><%= homes.city %></p>
+			</div>
+			
+			<div class="room-info-warp">
+								<div class="room-info">
+									<div class="rf-left">
+										<p><i class="fa fa-bed" aria-hidden="true"></i>
+											<%= homes.bedrooms %></p>
+									</div>
+									<div class="rf-right">
+										<p><i class="fa fa-bath" aria-hidden="true"></i> <%= homes.bathrooms %></p>
+									</div>	
+								</div>
+							</div>
+    <a href="/homes/<%=homes._id %>" class="room-price"><%= homes.price %></a>
+  </div>
+</div>	
+       
+    </div>
+    
+<% } ); %>
+    </div>
+</div>
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+<% include ../partials/footer %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

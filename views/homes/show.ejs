@@ -1,0 +1,72 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-9">
+			<div class="card mb-3">
+                <img class="card-img-top" src="<%= home.image %>" alt="<%=home.name%>">
+                <div class="card-body">
+					
+					<div class="single-list-content">
+            <div class="row">
+              <div class="col-xl-8 sl-title">
+                <h2><%=home.address%></h2>
+                <p><%= home.city %></p>
+              </div>
+              <div class="col-xl-4">
+                <a href="#" class="price-btn"><%= home.price %></a>
+              </div>
+            </div>
+            
+            <h3 class="sl-sp-title">Overview</h3>
+            <div class="description">
+              <p><%= home.description %></p>
+              </div>
+            
+          </div>
+					
+					
+                    <% if(currentUser && home.author.id.equals(currentUser._id)){ %>
+                        <a class="btn  btn-warning btn-sm" href="/homes/<%= home._id %>/edit">Edit</a>
+                        <form class="delete-form" action="/homes/<%= home._id %>?_method=DELETE" method="POST">
+                            <button class="btn  btn-danger btn-sm">Delete</button>
+                        </form>
+                    <% }%>
+                </div>
+            </div>
+				
+		</div>
+		
+<!-- 	form	 -->
+	<div class="col-md-3">
+		<div class="related-properties">
+			<h2>Schedule Tour</h2> </div>
+		<div class="contact-form-card">
+						<h5>Request Information</h5>
+						<form>
+							<input type="text" placeholder="First name">
+							<input type="text" placeholder="Last name">
+							<input type="text" placeholder="Email">
+							<input type="text" placeholder="Phone number">
+							<textarea placeholder="Message"></textarea>
+							<button>SUBMIT</button>
+						</form>
+					</div>
+		</div>
+		
+
+<!-- end form		 -->
+		
+		
+
+	</div> </div>
+            
+
+<% include ../partials/footer %>
+
+
+
+
+
+

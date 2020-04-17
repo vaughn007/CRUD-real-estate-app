@@ -1,0 +1,66 @@
+<% include ../partials/header %> <!-- go back a folder. it like using cd .. -->
+<div class="row justify-content-md-center">
+	
+<div class="col-md-12 text-center">
+	<h3>Create a New Home</h3>
+<div style="width: 30%; margin: 25px auto;">
+  
+<form action="/homes" method="POST">
+  <div class="form-group">
+    <input class="form-control" type="text" name="name" placeholder="name">
+  </div>
+  
+  <div class="form-group">
+	  <input class="form-control" type="text" name="price" placeholder="price">
+    <!-- <input class="form-control" type="number" name="price" placeholder="price" min="0.01" step="0.01"> -->
+  </div>
+  
+  <div class="form-group">
+  <input class="form-control" type="text" name="image" placeholder="image url">
+  </div>
+  
+  <div class="form-group">
+  <input class="form-control" type="text" name="description" placeholder="description">
+  </div>
+	
+	<div class="form-group">
+  <input class="form-control" type="text" name="address" placeholder="address">
+  </div>
+
+  <div class="form-group">
+  <input class="form-control" type="text" name="city" placeholder="city">
+  </div>
+
+  <div class="form-group">
+  <input class="form-control" type="text" name="bedrooms" placeholder="bedrooms">
+  </div>
+
+  <div class="form-group">
+  <input class="form-control" type="text" name="bathrooms" placeholder="bathrooms">
+  </div>
+	
+  
+  <!--hidden fields-->
+  <div class="form-group">
+  <!--<input class="form-control" type="text" name="comment[author]" placeholder="author">-->
+  <input type='hidden' name='comment[author]' value=<%=currentUser.username%> >
+  </div>
+  
+
+  <!--end of hidden fields-->
+  
+  
+  <div class="form-group">
+  <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+  </div>
+</form>
+<!-- <a href="/homes">Go Back</a> -->
+</div>
+
+</div>
+
+</div>
+
+
+
+<% include ../partials/footer %> <!-- go back a folder. it like using cd .. -->
